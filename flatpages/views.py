@@ -3,6 +3,7 @@ from django.contrib.sites.models import get_current_site
 from django.http import Http404, HttpResponse, HttpResponsePermanentRedirect
 from django.shortcuts import get_object_or_404
 from django.template import loader
+from django.template import RequestContext
 from django.utils.safestring import mark_safe
 from django.views.decorators.csrf import csrf_protect
 from .models import FlatPage
@@ -68,5 +69,5 @@ def render_flatpage(request, f):
     f.title = mark_safe(f.title)
     f.content = mark_safe(f.content)
 
-    response = HttpResponse(template.render({'flatpage': f}, request))
+    response = HttpResponse(template.render(RequestContext(request, {'flatpage': f})))
     return response
