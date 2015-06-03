@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from .forms import FlatpageForm
-from .flatpages.models import FlatPage
+from .models import FlatPage
 
 
 class FlatPageAdmin(admin.ModelAdmin):
