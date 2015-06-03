@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from django.contrib.flatpages import views
+from .views import flatpage
 
 urlpatterns = [
-    url(r'^(?P<url>.*)$', views.flatpage, name='django.contrib.flatpages.views.flatpage'),
+    url(r'^(?P<url>.*)$', flatpage, name='flatpage'),
 ]
