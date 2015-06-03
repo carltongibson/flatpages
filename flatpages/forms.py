@@ -16,7 +16,7 @@ class FlatpageForm(forms.ModelForm):
 
     class Meta:
         model = FlatPage
-        fields = '__all__'
+#        fields = '__all__'
 
     def clean_url(self):
         url = self.cleaned_data['url']
